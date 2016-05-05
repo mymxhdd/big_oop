@@ -3,6 +3,7 @@
 #include "wordbase.h"
 #include "learn_stragety.h"
 #include "word.h"
+//控制台，所有指令都从这发出
 class console{
 public:
     virtual void start() = 0;

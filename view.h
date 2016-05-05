@@ -1,6 +1,6 @@
 #ifndef VIEW_H
 #define VIEW_H
-
+//视图窗口，所有显示在屏幕上的从这调用
 class view{
 public:
     virtual void start() = 0;

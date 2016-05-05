@@ -1,7 +1,7 @@
 #ifndef WORDBASE_H
 #define WORDBASE_H
 #include "file_stragety.h"
-
+//单词库
 template<typename T> class wordbase
 {
 public:

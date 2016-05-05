@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 using namespace std;
+//单词所需数据，根据需要可以进行修改
 struct general
 {
     string _word;
@@ -14,7 +15,7 @@ struct general
     _translation(translation), _sentence(NULL) { }
     general() {}
 };
-
+//单词接口类
 class word
 {
 public:
