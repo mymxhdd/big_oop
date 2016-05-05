@@ -6,17 +6,17 @@
 #include <string>
 using namespace std;
 //单词所需数据，根据需要可以进行修改
-struct general
+struct General
 {
     string _word;
     string _translation;
     string * _sentence;
-    general(string word, string translation, string * sentence = NULL) : _word(word), 
+    General(string word, string translation, string * sentence = NULL) : _word(word), 
     _translation(translation), _sentence(NULL) { }
-    general() {}
+    General() {}
 };
 //单词接口类
-class word
+class Word
 {
 public:
     virtual void show() = 0;
@@ -24,14 +24,14 @@ public:
     virtual void learn() = 0;
     virtual void test() = 0;
     virtual void addsentence() = 0;
-    virtual ~word() {}
+    virtual ~Word() {}
 };
 
 
-class old_word : public word {
-    general * oldword;
+class Old_word : public Word {
+    General * oldword;
 public:
-    old_word(string tword, string translation, string * sentence = NULL): oldword -> general(tword, translation, sentence) {}
+    Old_word(string tword, string translation, string * sentence = NULL) { oldword = new General(tword, translation, sentence); }
     void show();
     void translate();
     void learn();
@@ -40,10 +40,10 @@ public:
 };
 
 
-class rare_word : public word {
-   general * rareword
+class Rare_word : public Word {
+   General * rareword;
 public:    
-    rare_word(string tword, string translation, string * sentence = NULL): rareword -> general(tword, translation, sentence) {}
+    Rare_word(string tword, string translation, string * sentence = NULL) { rareword = new General(tword, translation, sentence); }
     void show();
     void translate();
     void learn();
@@ -52,10 +52,10 @@ public:
 };
 
 
-class familiar_word : public word {
-    general * familiarword;
+class Familiar_word : public Word {
+    General * familiarword;
 public:
-    familiar_word(string tword, string translation, string * sentence = NULL): familiarword -> general(tword, translation, sentence) {}
+    Familiar_word(string tword, string translation, string * sentence = NULL) { familiarword = new General(tword, translation, sentence); }
     void show();
     void translate();
     void learn();
@@ -63,10 +63,10 @@ public:
     void addsentence();
 };
 
-class forget_word : public word {
-    general * forgetword;
+class Forget_word : public Word {
+    General * forgetword;
 public:
-    forget_word(string tword, string translation, string * sentence = NULL): forgetword -> general(tword, translation, sentence) {}
+    Forget_word(string tword, string translation, string * sentence = NULL) { forgetword = new General(tword, translation, sentence); }
     void show();
     void translate();
     void learn();

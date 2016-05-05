@@ -1,15 +1,15 @@
 #ifndef VIEW_H
 #define VIEW_H
 //视图窗口，所有显示在屏幕上的从这调用
-class view{
+class View{
 public:
     virtual void start() = 0;
-    virtual void learn(word* tword) = 0;    
+    virtual void learn(Word* tword) = 0;    
 };
 
-class my_view : public view{
+class My_view : public View{
 public:    
     void start();
-    void learn(word* tword); 
+    void learn(Word* tword); 
 };
 #endif
