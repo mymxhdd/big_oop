@@ -3,6 +3,7 @@
 #include "Wordbase.h"
 #include "Learn_stragety.h"
 #include "Word.h"
+#include "circle_queue.h"
 //控制台，所有指令都从这发出
 class Console{
 public:
@@ -17,8 +18,9 @@ public:
     virtual ~Console();
 };
 
+template<typename T1>
 class My_console : public Console{
-    View * _view；  Wordbase<word*> _base； Learn_stragety * _sty;   //我把 ‘，’改为‘；’了
+    View * _view；  Wordbase<word*> _base； Learn_stragety * _sty; MyQue<T1> * history; //我把 ‘，’改为‘；’了
 public:
     void start() = 0;
     void get_wordbase(Wordbase<word*> * base);

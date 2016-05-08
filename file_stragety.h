@@ -7,4 +7,10 @@ public:
     virtual void write(string goal) = 0;
 };
 
+class first_file : File_stragety{
+public:    
+    void read(string goal);
+    void write(string goal);
+};
+
 #endif

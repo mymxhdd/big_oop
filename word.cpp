@@ -22,3 +22,16 @@ void Worddo :: translate(){
 void Worddo :: addsentence(string tsentence){
     _sentence.push_back(tsentence);
 }
+
+
+string Worddo :: getword(){
+    return _word;
+}
+
+void Worddo :: write(&ofstream fout){
+    fout << _word << ' ' << _translation << '|';
+    vector<string> :: iterator t;
+    for(t = _sentence.begin(); t != _sentence.end(); t++)
+        fout << *t << '|';
+    fout << endl;    
+}    
