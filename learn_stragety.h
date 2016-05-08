@@ -3,7 +3,7 @@
 //学习策略，继承接口进行不同学习模式
 class Learn_stragety{
 public:    
-    virtual learn() = 0;
+    virtual void learn() = 0;
 };
 
 #endif

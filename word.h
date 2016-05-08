@@ -9,8 +9,8 @@ using namespace std;
 struct General
 {
     string _word;
-    string _translation;
-    string * _sentence;
+    vecotr<string> _translation;
+    vector<string> _sentence;
     General(string word, string translation, string * sentence = NULL) : _word(word), 
     _translation(translation), _sentence(NULL) { }
     General() {}
@@ -29,9 +29,11 @@ public:
 
 
 class Old_word : public Word {
-    General * oldword;
+    string _word;
+    vecotr<string> _translation;
+    vector<string> _sentence;
 public:
-    Old_word(string tword, string translation, string * sentence = NULL) { oldword = new General(tword, translation, sentence); }
+    Old_word(string tword, vector<string> translation, vector<string> sentence): _word(tword), _translation(translation), _sentence(sentence) {}
     void show();
     void translate();
     void learn();

@@ -13,7 +13,7 @@ public:
     virtual void learn() = 0;
     virtual void search_word(string word) = 0;
     virtual void search_txt() = 0;
-    virtual addsentence(string word, string sentence) = 0;//返还型？？
+    virtual void addsentence(string word, string sentence) = 0;//返还型？？
     virtual ~Console();
 };
 
