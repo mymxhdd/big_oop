@@ -9,10 +9,11 @@ template<typename T> class Wordbase
 public:
     virtual void read_data(string goal) = 0;
     virtual void write_data(string goal) = 0;
-    virtual void search_word(string word) = 0;
+    virtual bool search_word(string word) = 0;
 	virtual void add_word(T* word) = 0;
 	virtual void remove_word(string word) = 0;
     virtual void search_txt(string txt) = 0;
+    virtual void add_sentence(string word, string sentence) = 0;
     virtual ~Wordbase();
 };
 
@@ -24,10 +25,11 @@ template <typename T> Vectorwordbase : public Wordbase<T>{
 public:
     void read_data(string goal);
     void write_data(string goal);
-    void search_word(string word);
+    bool search_word(string word);
 	void add_word(T* word);
 	void remove_word(string word);
     void search_txt(string txt);
+    void add_sentence(string word, string sentence);
 };
 
 template <typename T> Mapwordbase : public Wordbase<T>{  
@@ -36,9 +38,10 @@ template <typename T> Mapwordbase : public Wordbase<T>{
 public:
     void read_data(string goal);
     void write_data(string goal);
-    void search_word(string word);
+    bool search_word(string word);
 	void add_word(T* word);
 	void remove_word(string word);
     void search_txt(string txt);
+    void add_sentence(string word, string sentence);
 };
 #endif

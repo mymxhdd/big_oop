@@ -1,5 +1,5 @@
-#include "wordbase.h"
-#include "word.h"
+#include "Wordbase.h"
+#include "Word.h"
 
 template<typename T>
 void Mapwordbase:: read_data(string goal)
@@ -56,9 +56,16 @@ void Mapwordbase:: write_data(string goal)
 }
 
 template<typename T>
-void Mapwordbase:: search_word(string word)
+bool Mapwordbase:: search_word(string word)
 {
-   words.count(word) -> translate();  
+   map<string, T*> :: iterator t;
+   t = words.find(word);
+   if(t != words.end())
+   {
+       t -> second -> show();
+       return true;
+   } 
+   return false; 
 }
 
 template<typename T>
@@ -71,4 +78,27 @@ template<typename T>
 void Mapwordbase:: remove_word(string word)
 {
     words.erase(word);
+}
+
+template<typename T>
+void Mapwordbase:: search_txt(string txt)
+{
+    int count = 0;
+    ifstream fin(txt);
+    string tword;
+    while(!fin.eof())
+    {
+        fin >> tword;
+        words.find(tword);
+    }
+    
+}
+
+template<typename T>
+void Mapwordbase:: add_sentence(string word, string sentence)
+{
+    map<string, T*>:: iterator t;
+    t = words.find(word);
+    if(t != words.end())
+        t -> second -> addsentence(sentence);
 }
